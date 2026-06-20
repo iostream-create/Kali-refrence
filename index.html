@@ -145,6 +145,12 @@
   .login {
     text-align: center;
   }
+  /* creator link */
+  .creator a{
+    text-decoration: none;
+    color: var(--text);
+    font-size: 11px;
+  }
 
   /* Animated top border glow */
   .login-card::before {
@@ -304,7 +310,7 @@
     text-align: center;
     letter-spacing: 0.3px;
   }
-  .warning-banner .warn-icon{
+  .warning-banner .warn-icon {
     display: block;
     font-size: 1rem;
     margin-bottom: 0.3rem;
@@ -312,6 +318,9 @@
   }
   .warning-banner .warning-text{
     color: var(--red);
+  }
+  .warning-banner strong {
+    color: var(--yellow);
   }
 
   /* ── Footer ── */
@@ -384,9 +393,6 @@
   <div class="brand-sub">Cybersecurity Reference Database</div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     LOGIN CARD
-     ═══════════════════════════════════════════ -->
 <div class="login-card">
 
   <!-- Heading -->
@@ -442,9 +448,6 @@
     ⛔ Username atau password salah. Akses ditolak.
   </div>
 
-  <!-- ── WARNING BANNER ─────────────────────────────────
-       Letakkan peringatan di sini (bawah form, dalam card)
-       ───────────────────────────────────────────────── -->
   <div class="warning-banner">
     <span class="warn-icon">⚠️</span>
     <strong class="warning-text">PERINGATAN KERAS</strong><br>
@@ -452,7 +455,8 @@
     Penggunaan informasi ini untuk menyerang sistem tanpa izin adalah
     <strong>tindakan ilegal</strong> dan dapat dipidana.
     Akses hanya diperbolehkan untuk keperluan <strong>edukasi &amp; lab resmi</strong>.
-    Setiap sesi dapat dicatat dan dipantau.
+    Setiap sesi dapat dicatat dan dipantau. Penyalah gunaan web ini diluar tanggung jawab kami!<br>
+    <strong class="warning-text">Bijak dalam menggunakan website ini! </strong>
   </div>
 
 </div>
@@ -460,8 +464,9 @@
 
 <!-- Footer -->
 <div class="login-footer">
-  🐉 Kali Linux Tools Reference &nbsp;·&nbsp; Create by Dims<br>
-  Gunakan hanya pada sistem milik sendiri atau dengan izin tertulis
+  🐉 Kali Linux Tools Reference &nbsp;·&nbsp;<br>
+  Gunakan hanya pada sistem milik sendiri atau dengan izin tertulis<br><div class="creator">
+  <a href="https://iostream-create.github.io/Dims">Create By -Dims</a></div>
 </div>
 
 <!-- Success redirect overlay -->
@@ -472,15 +477,10 @@
 </div>
 
 <script>
-  /* ============================================================
-     ██████  KREDENSIAL — GANTI DI SINI
-     ============================================================
-     Untuk keamanan lebih, simpan validasi di server (backend).
-     Jika tetap client-side, minimal obfuscate / encode nilai ini.
-     ============================================================ */
+
   const VALID_USERNAME = "Admin";   // ← GANTI USERNAME DI SINI
   const VALID_PASSWORD = "Fsociety"; 
-
+    // GANTI PASSWORD DI SINI
   const MAIN_PAGE = "main-page.html";
 
   /* ── Particles ── */
@@ -495,7 +495,6 @@
       p.style.animationDuration  = (8 + Math.random() * 14) + 's';
       p.style.animationDelay     = (Math.random() * 12) + 's';
       p.style.width  = p.style.height = (1 + Math.random() * 2) + 'px';
-      /* Alternate accent colour */
       if (Math.random() > 0.6) p.style.background = '#7c3aed';
       container.appendChild(p);
     }
